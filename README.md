@@ -6,9 +6,9 @@
 
 其基本模型如下：
 
-$begin:math:display$
-d\=\\frac\{c\}\{4\\pi f\}\\phi
-$end:math:display$
+$$
+d = \frac{c}{4\pi f}\phi
+$$
 
 其中：
 
@@ -23,34 +23,32 @@ $end:math:display$
 
 由於相位只能量測：
 
-$begin:math:display$
-\\phi \\in \[0\,2\\pi\)
-$end:math:display$
+$$
+\phi \in [0, 2\pi)
+$$
 
 因此：
 
-$begin:math:display$
-\\phi
-\=
-\\left\(
-\\frac\{4\\pi fd\}\{c\}
-\\right\)
-\\bmod 2\\pi
-$end:math:display$
+$$
+\phi =
+\left(
+\frac{4\pi f d}{c}
+\right)
+\bmod 2\pi
+$$
 
 實際上感測器只能得到：
 
-$begin:math:display$
-d \\bmod \\frac\{c\}\{2f\}
-$end:math:display$
+$$
+d \bmod \frac{c}{2f}
+$$
 
 因此真實距離可能為：
 
-$begin:math:display$
-d
-\=
-d\_0\+k\\frac\{c\}\{2f\}
-$end:math:display$
+$$
+d =
+d_0 + k\frac{c}{2f}
+$$
 
 其中：
 
@@ -80,15 +78,15 @@ f = 80 MHz
 
 則：
 
-$begin:math:display$
-R\=\\frac\{c\}\{2f\}
-$end:math:display$
+$$
+R = \frac{c}{2f}
+$$
 
 得到：
 
-$begin:math:display$
-R\=1\.875m
-$end:math:display$
+$$
+R = 1.875m
+$$
 
 若量測到某個相位值：
 
@@ -164,9 +162,9 @@ f3
 
 ## 單頻 Unambiguous Range
 
-$begin:math:display$
-R\=\\frac\{c\}\{2f\}
-$end:math:display$
+$$
+R = \frac{c}{2f}
+$$
 
 其中：
 
@@ -190,18 +188,17 @@ R = 單頻可唯一量測距離範圍
 
 假設相位誤差：
 
-$begin:math:display$
-\\sigma\_\\phi
-$end:math:display$
+$$
+\sigma_\phi
+$$
 
 則距離誤差：
 
-$begin:math:display$
-\\sigma\_d
-\=
-\\frac\{c\}\{4\\pi f\}
-\\sigma\_\\phi
-$end:math:display$
+$$
+\sigma_d =
+\frac{c}{4\pi f}
+\sigma_\phi
+$$
 
 結論：
 
@@ -220,21 +217,20 @@ $end:math:display$
 
 兩個頻率：
 
-$begin:math:display$
-f\_1
-$end:math:display$
+$$
+f_1
+$$
 
-$begin:math:display$
-f\_2
-$end:math:display$
+$$
+f_2
+$$
 
 形成：
 
-$begin:math:display$
-R\_\{syn\}
-\=
-\\frac\{c\}\{2\|f\_1\-f\_2\|\}
-$end:math:display$
+$$
+R_{syn} =
+\frac{c}{2|f_1 - f_2|}
+$$
 
 稱為：
 
@@ -277,11 +273,10 @@ Phase Noise 放大
 
 近似：
 
-$begin:math:display$
-\\sigma\_d
-\\propto
-\\frac\{1\}\{\|f\_1\-f\_2\|\}
-$end:math:display$
+$$
+\sigma_d \propto
+\frac{1}{|f_1 - f_2|}
+$$
 
 因此：
 
@@ -582,9 +577,9 @@ Phase Noise
 
 建立：
 
-$begin:math:display$
-P\(d\|\\phi\_1\,\\phi\_2\,\\phi\_3\)
-$end:math:display$
+$$
+P(d|\phi_1, \phi_2, \phi_3)
+$$
 
 而非傳統硬判斷。
 
