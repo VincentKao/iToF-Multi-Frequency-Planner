@@ -575,6 +575,12 @@ Phase Noise
 
 本專案提供一個純 Python 命令列工具，可用來快速計算單頻距離範圍、雙頻 Synthetic Range、多頻率組合分析、最佳頻率搜尋，以及輸出頻率對 heatmap CSV。
 
+Model Based Test 的 TSD 文件請參考：
+
+```text
+docs/MBT_TSD.md
+```
+
 ## 安裝
 
 在專案根目錄執行：
