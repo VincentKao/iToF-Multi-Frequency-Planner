@@ -571,6 +571,125 @@ Phase Noise
 
 ---
 
+# Python 工具使用方式
+
+本專案提供一個純 Python 命令列工具，可用來快速計算單頻距離範圍、雙頻 Synthetic Range、多頻率組合分析、最佳頻率搜尋，以及輸出頻率對 heatmap CSV。
+
+## 安裝
+
+在專案根目錄執行：
+
+```bash
+python3 -m pip install -e .
+```
+
+也可以不安裝，直接用 module 方式執行：
+
+```bash
+python3 -m itof_planner.cli --help
+```
+
+## 單頻分析
+
+```bash
+python3 -m itof_planner.cli single 80 --phase-noise 0.01
+```
+
+輸出：
+
+```text
+Frequency: 80 MHz
+Unambiguous range: 1.874 m
+Distance precision: 2.982 mm
+```
+
+## 雙頻分析
+
+```bash
+python3 -m itof_planner.cli pair 80 75 --phase-noise 0.01
+```
+
+輸出項目包含：
+
+```text
+Single range f1
+Single range f2
+Synthetic range
+Precision f1 / f2
+Combined precision
+Beat noise
+Noise amplification factor
+Unwrap robustness
+```
+
+## 多頻率分析
+
+```bash
+python3 -m itof_planner.cli multi 20 60 100 --phase-noise 0.01
+```
+
+工具會輸出：
+
+```text
+Joint synthetic range
+Minimum pair delta
+Single-frequency ranges
+Pair synthetic ranges
+Combined precision
+Beat noise
+Unwrap robustness
+```
+
+## 最佳頻率搜尋
+
+例如：
+
+```bash
+python3 -m itof_planner.cli search \
+  --min 20 \
+  --max 120 \
+  --step 20 \
+  --count 3 \
+  --max-distance 5 \
+  --target-precision-mm 5 \
+  --phase-noise 0.01 \
+  --top 10
+```
+
+此命令會搜尋三頻組合，並依照以下指標評分：
+
+- 是否滿足最大距離
+- 是否滿足目標精度
+- Synthetic Range
+- Combined Precision
+- Beat Noise
+- Minimum Pair Delta
+
+## Heatmap CSV
+
+```bash
+python3 -m itof_planner.cli heatmap \
+  --min 20 \
+  --max 120 \
+  --step 5 \
+  --phase-noise 0.01 \
+  --output outputs/pair_heatmap.csv
+```
+
+輸出的 CSV 欄位包含：
+
+```text
+f1_mhz
+f2_mhz
+synthetic_range_m
+combined_precision_mm
+beat_noise_mm
+noise_amplification_factor
+robustness
+```
+
+---
+
 # 未來進階方向
 
 ## Bayesian Phase Unwrapping
