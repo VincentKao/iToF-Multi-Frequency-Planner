@@ -581,6 +581,19 @@ Model Based Test 的 TSD 文件請參考：
 docs/MBT_TSD.md
 ```
 
+對應的自動化測試位於：
+
+```text
+tests/test_mbt_core.py
+tests/test_mbt_cli.py
+```
+
+執行測試：
+
+```bash
+python3 -m unittest discover -s tests
+```
+
 ## 安裝
 
 在專案根目錄執行：
